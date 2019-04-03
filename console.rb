@@ -3,7 +3,7 @@ require_relative('models/artist.rb')
 require_relative('models/album.rb')
 
 artist1 = Artist.new({
-  'name' => 'The Rolling Stones'
+  'name' => 'The Rooling Stanes'
   })
 artist1.save()
 
@@ -53,12 +53,20 @@ album5 = Album.new({
 album5.save()
 
 album6 = Album.new({
-  'title' => 'Walkie Talkie',
-  'genre' => 'Electronic',
-  'artist_id' => "#{artist3.id}"
+  'title' => 'Wakey Wakey',
+  'genre' => 'Pop',
+  'artist_id' => "#{artist1.id}"
   })
 album6.save()
 
-binding.pry
+album6.title = 'Walkie Talkie'
+album6.genre = 'Electronic'
+album6.artist_id = "#{artist3.id}"
+album6.update()
+
+artist1.name = 'The Rolling Stones'
+artist1.update()
+
+# binding.pry
 
 nil
