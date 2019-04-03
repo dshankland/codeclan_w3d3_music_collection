@@ -2,6 +2,9 @@ require('pry-byebug')
 require_relative('models/artist.rb')
 require_relative('models/album.rb')
 
+Album.delete_all()
+Artist.delete_all()
+
 artist1 = Artist.new({
   'name' => 'The Rooling Stanes'
   })
@@ -67,6 +70,6 @@ album6.update()
 artist1.name = 'The Rolling Stones'
 artist1.update()
 
-# binding.pry
+binding.pry
 
 nil

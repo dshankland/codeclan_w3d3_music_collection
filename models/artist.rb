@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner.rb')
+require_relative('album.rb')
 
 class Artist
 
@@ -33,6 +34,17 @@ class Artist
     sql = "UPDATE artists SET name = $1 WHERE id = $2"
     values = [@name, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM artists WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM artists"
+    SqlRunner.run(sql)
   end
 
 end
