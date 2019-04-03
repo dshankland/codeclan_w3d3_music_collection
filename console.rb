@@ -38,6 +38,27 @@ album3 = Album.new({
   })
 album3.save()
 
+album4 = Album.new({
+  'title' => 'Sticky Fingers',
+  'genre' => 'Rock',
+  'artist_id' => "#{artist1.id}"
+  })
+album4.save()
+
+album5 = Album.new({
+  'title' => 'A Nod is as Good as a Wink',
+  'genre' => 'Rock',
+  'artist_id' => "#{artist2.id}"
+  })
+album5.save()
+
+album6 = Album.new({
+  'title' => 'Walkie Talkie',
+  'genre' => 'Electronic',
+  'artist_id' => "#{artist3.id}"
+  })
+album6.save()
+
 binding.pry
 
 nil
