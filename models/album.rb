@@ -29,7 +29,7 @@ class Album
     sql = "SELECT * FROM artists WHERE id = $1"
     values = [@artist_id]
     result = SqlRunner.run(sql, values)[0]
-    return Artist.new(result)
+    return Artist.new(result) # could do result.first
   end
 
   def update()
